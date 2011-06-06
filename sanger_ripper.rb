@@ -11,13 +11,12 @@ failures = Array.new
 agent = Mechanize.new
 
 
-
 File.foreach("line separated genes.txt") do |line|
 		genes.push(line)
 end
 
-FileUtils.mkdir_p('mpd_data')
-FileUtils.cd('mpd_data')
+FileUtils.mkdir_p('sanger_data')
+FileUtils.cd('sanger_data')
 
 genes.each do |gene|
 	url = URI.parse(base_url)
